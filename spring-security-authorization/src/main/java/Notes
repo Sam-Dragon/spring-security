@@ -1,0 +1,22 @@
+Notes:
+
+# For applying Security using Authorization
+
+1. Enable Web security in Security Configuration file
+@EnableWebSecurity
+
+2. Extends to WebSecurityConfigurerAdapter
+
+3. Override configure(AuthenticationManagerBuilder auth)
+- It accepts username, password & authorities
+
+4. Override configure(HttpSecurity http)
+- specify pattern with roles
+
+4. Create @Bean for PasswordEncoder 
+
+
+
+# For BYPASSING url
+
+1. Add antPattern where .permitAll is called

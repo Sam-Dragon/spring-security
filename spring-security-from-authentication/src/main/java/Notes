@@ -1,0 +1,16 @@
+Notes:
+
+# For applying Security using Authentication
+
+1. Enable Web security in Security Configuration file
+@EnableWebSecurity
+
+2. Extends to WebSecurityConfigurerAdapter
+
+3. Override configure(AuthenticationManagerBuilder auth)
+- It accepts username, password & authorities
+
+4. Override configure(HttpSecurity http) 
+- specify patterns to authenticate with .formLogin()
+
+5. Create @Bean for PasswordEncoder 

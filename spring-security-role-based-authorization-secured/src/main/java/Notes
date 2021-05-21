@@ -1,0 +1,9 @@
+Notes:
+
+# For applying Roles Based Security using @Secured
+
+1. Enable Global security in Security Configuration file
+@EnableGlobalMethodSecurity(securedEnabled = true)
+
+2. Mark the api with roles
+@Secured({"ROLE_USER", "ROLE_ADMIN"})

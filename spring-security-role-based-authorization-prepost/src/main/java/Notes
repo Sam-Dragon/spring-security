@@ -1,0 +1,15 @@
+Notes:
+
+# For applying Roles Based Security using @Secured
+
+1. Enable Global security in Security Configuration file
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+
+2. Mark the api with roles
+@PreAuthorize("permitAll")
+@PreAuthorize("hasRole('ROLE_USER')")
+@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+@PreAuthorize("denyAll")
+@PreAuthorize("isRememberMe()")  -- Yet to verify
+@PreAuthorize("isAuthenticated()")
+@PreAuthorize("hasPermission(targetObject, permissionObject)") -- Yet to verify
