@@ -1,3 +1,9 @@
 Notes:
 
-1. 
+1. In pom.xml / build.gradle, include the security starter pack
+- org.springframework.boot:spring-boot-starter-security
+
+2. Just by including above plug-in, security is enabled and the user name and password is
+- username : user
+- password : Displayed on the console 
+[Using generated security password: 01eb0422-60e2-4f58-85bc-d95fc716a393]

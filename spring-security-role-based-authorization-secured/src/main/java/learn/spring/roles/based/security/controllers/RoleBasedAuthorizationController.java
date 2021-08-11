@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/security/role/based/secured")
 public class RoleBasedAuthorizationController {
 
-	@Secured({"ROLE_ANONYMOUS"})
+	@Secured({"ROLE_ANONYMOUS","ROLE_USER", "ROLE_ADMIN"})
 	@GetMapping
 	public String hello() {
 		return "Mr. Guest.. Roles Based Access..";

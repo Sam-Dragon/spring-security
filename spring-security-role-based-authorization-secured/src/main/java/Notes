@@ -1,9 +1,29 @@
 Notes:
 
+1. In pom.xml / build.gradle, include the security starter pack
+- org.springframework.boot:spring-boot-starter-security
+
+2. Just by including above plug-in, security is disable & password is not displayed in console
+- password : Not Displayed on the console 
+[Using generated security password: 01eb0422-60e2-4f58-85bc-d95fc716a393]
+
 # For applying Roles Based Security using @Secured
 
-1. Enable Global security in Security Configuration file
+1. Enable Web security in Security Configuration file
+@EnableWebSecurity
+
+2. Enable Global security in Security Configuration file
 @EnableGlobalMethodSecurity(securedEnabled = true)
 
-2. Mark the api with roles
+3. Extends to WebSecurityConfigurerAdapter
+
+4. Override configure(AuthenticationManagerBuilder auth)
+
+5. Override configure(HttpSecurity http)
+
+6. Create @Bean for PasswordEncoder 
+
+
+7. Mark the all api's with roles
 @Secured({"ROLE_USER", "ROLE_ADMIN"})
+- ROLE_USER = USER

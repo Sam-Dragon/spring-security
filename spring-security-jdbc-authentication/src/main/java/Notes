@@ -15,9 +15,9 @@ Notes:
 2. Extends to WebSecurityConfigurerAdapter
 
 3. Override configure(AuthenticationManagerBuilder auth)
-- call ldapAuthentication with groupname, url, password 
+- call jdbcAuthentication specifying dataSource;
 
-4. Override configure(HttpSecurity http) 
-- specify patterns to authenticate with .formLogin()
+4. Override configure(HttpSecurity http)
+- Mention authorizeRequest with pattern to authenticate & mention authentication type [httpBasic]
 
 5. Create @Bean for PasswordEncoder 
