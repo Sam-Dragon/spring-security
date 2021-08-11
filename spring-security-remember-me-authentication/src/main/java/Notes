@@ -1,0 +1,23 @@
+Notes:
+
+1. In pom.xml / build.gradle, include the security starter pack
+- org.springframework.boot:spring-boot-starter-security
+
+2. Just by including above plug-in, security is disable & password is not displayed in console
+- password : Not Displayed on the console 
+[Using generated security password: 01eb0422-60e2-4f58-85bc-d95fc716a393]
+
+# For applying Security using Authentication
+
+1. Enable Web security in Security Configuration file
+@EnableWebSecurity
+
+2. Extends to WebSecurityConfigurerAdapter
+
+3. Override configure(AuthenticationManagerBuilder auth)
+- It accepts username, password & authorities using inMemoryAuthentication
+
+4. Override configure(HttpSecurity http)
+- Mention authorizeRequest with pattern to authenticate & mention authentication type [httpBasic]
+
+5. Create @Bean for PasswordEncoder 
